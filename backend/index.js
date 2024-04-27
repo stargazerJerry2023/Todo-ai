@@ -30,7 +30,7 @@ app.post('/add-todo', async (req, res) => {
     await mongoclient.db('todo-ai').collection('todo').insertOne(todo);
     res.send('Todo added successfully');
 })
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is listening on port ${PORT}`);
 });
 

@@ -13,7 +13,7 @@ function App() {
   ])
   function addTask() {
     if (taskinput === '') return
-    fetch('http://localhost:3000/add-todo', {
+    fetch('todo-ai-production-3cd2.up.railway.app', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ function App() {
     newTasks.splice(index, 1)
     setTasks(newTasks)
 
-    fetch('http://localhost:3000/delete-todo', {
+    fetch('todo-ai-production-3cd2.up.railway.app', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch('http://localhost:3000/todos')
+    fetch('todo-ai-production-3cd2.up.railway.app')
       .then(res => res.json())
       .then(data => {
         let newTasks = []

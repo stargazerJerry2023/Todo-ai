@@ -12,7 +12,7 @@ mongoclient.connect().then(() => {
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.get('/hello', (req, res) => {
     res.send('Hello World!');
 });
@@ -30,7 +30,7 @@ app.post('/add-todo', async (req, res) => {
     await mongoclient.db('todo-ai').collection('todo').insertOne(todo);
     res.send('Todo added successfully');
 })
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
 

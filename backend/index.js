@@ -4,7 +4,7 @@ import cors from 'cors';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 dotenv.config();
-let MONGO_URL="mongodb+srv://todo:teRC81YiLRmkJnZb@todo-ai.wgmqyjb.mongodb.net/?retryWrites=true&w=majority&appName=todo-ai"
+
 let mongoclient = new MongoClient(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoclient.connect().then(() => {
     console.log('Connected to the database');
